@@ -9,5 +9,3 @@ class My_test < Minitest::Test
 		assert_equal(5,subtract(8,3))
 	end
 end
-
-

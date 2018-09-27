@@ -12,9 +12,9 @@
 
 def matching(arg1,arg2)
 	if arg1 == arg2
-		puts "They Match"
+		puts "We Have A Match"
 	else
-		puts "They Don't Match"
+		puts "We Don't Have Match"
 	end
 end
 
