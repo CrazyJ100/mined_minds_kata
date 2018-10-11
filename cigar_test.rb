@@ -47,4 +47,39 @@ class My_Test < Minitest::Test
 		bash_numbers = ["0234", "8463", "7463"]
 		assert_equal(["0234"], winning_tickets_off_by_one(my_number, bash_numbers))
 	end
+
+	def test_for_stuff
+		my_number = "1234"
+		bash_numbers = ["1238", "23042", "234235"]
+		assert_equal(["1238"], winning_tickets_off_by_one(my_number, bash_numbers))
+	end
+
+	def tests_for_more
+		my_number = "1234"
+		bash_numbers = ["2340", "2354235", "2354235"]
+		assert_equal(["2340"], winning_tickets_off_by_one(my_number, bash_numbers))
+	end
+	def test_for_bigger_number_array
+		my_number = "1234567"
+		bash_numbers = ["1234566", "2304782342", "2349867345"]
+		assert_equal(["1234566"], winning_tickets_off_by_one(my_number, bash_numbers))
+	end
+	def test_for_how_many_different
+		my_number = "1234567"
+		bash_numbers = "9384573"
+		assert_equal(7, numbers_off_by_how_many(my_number, bash_numbers))
+	end
+	def test_for_how_many_different
+		my_number = "1234567"
+		bash_numbers = "1234555"
+		assert_equal(2, numbers_off_by_how_many(my_number, bash_numbers))
+	end
+	# def test_for_how_many_matching
+	# 	my_number = "1234567"
+	# 	bash_numbers = "1234987"
+	# 	assert_equal(5, numbers_matching(my_number, bash_numbers))
+	# end
+
+	
+
 end
