@@ -74,12 +74,5 @@ class My_Test < Minitest::Test
 		bash_numbers = "1234555"
 		assert_equal(2, numbers_off_by_how_many(my_number, bash_numbers))
 	end
-	# def test_for_how_many_matching
-	# 	my_number = "1234567"
-	# 	bash_numbers = "1234987"
-	# 	assert_equal(5, numbers_matching(my_number, bash_numbers))
-	# end
-
-	
 
 end

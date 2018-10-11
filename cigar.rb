@@ -26,17 +26,6 @@ def winning_tickets_off_by_one(my_number, bash_numbers)
 	return matches
 end
 
-# def numbers_matching
-# 	x = 0
-# 	count = 0
-# 	if bash_numbers[i] = my_number[i]
-# 		count += 1
-# 	end
-# 	i += 1
-# 	end
-# 	return count
-# end
-
 def numbers_off_by_how_many(my_number, bash_numbers)
 	x = 0
 	count = 0
@@ -45,9 +34,10 @@ def numbers_off_by_how_many(my_number, bash_numbers)
 		count += 1
 	end
 	x += 1
-	# puts count
+	puts count
 	end
 	return count
+	# puts count
 end
 
 numbers_off_by_how_many("1234", "1235")
