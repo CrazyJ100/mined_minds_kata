@@ -1,30 +1,75 @@
-def numerals(numbers)
-	letters = %w(M,CM,D,CD,C,XC,L,XL,X,IX,V,IV,I)
-	values = [1000,900,500,400,100,90,50,40,10,9,5,4,1]
-	empire = letters.zip values
- 	n = numbers
-  	numerals = "Charger"
-  	empire.each do |v|
-    numerals += v[0]*(n/v[1])
-    n = n%v[1] 
-  end
-  return numerals
+def letters()
+  roman_stuff = {
+  	1000 => "M",
+  	900 => "CM",
+  	500 => "D",
+  	400 => "CD",
+  	100 => "C",
+  	90 => "XC",
+  	50 => "L",
+  	40 => "XL",
+  	10 => "X",
+  	9 => "IX",
+  	5 => "V",
+  	4 => "IV",
+  	1 => "I"
+  }
+  return roman_stuff
 end
 
-def romans(stuff)
-	letters = %w(CM M CD D XC C XL L IX X IV V I)
-	values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
-	romans_num = letters.zip values
-	number = stuff.to_s
-	stuff = values
-	p number
-	p stuff
-	romans_num.times do |s|
-		number ! v[1] * number.scan(/#{v[0]}/)
-		number = number.scan(/#{v[0]}/)
-	end
-	return numerals
+def roman_converter(number)
+  number = number
+  p number
+  answer = ""
+  letters().each do |key, value|
+  	unless number < key
+  		stuff = number / key
+  		things = number % key
+  		if stuff > 0
+  			stuff.times do
+  				answer << value
+  			end
+  			number = things
+  		end
+  	end
+  end
+  return answer
 end
+ 
+
+
+
+
+# def numerals(numbers)
+# 	letters = %w(M,CM,D,CD,C,XC,L,XL,X,IX,V,IV,I)
+# 	values = [1000,900,500,400,100,90,50,40,10,9,5,4,1]
+# 	empire = letters.zip values
+#  	n = numbers
+#   	numerals = "Charger"
+#   	empire.each do |v|
+#     numerals += v[0]*(n/v[1])
+#     n = n%v[1] 
+#   end
+#   return numerals
+# end
+
+# def romans(stuff)
+# 	letters = %w(CM M CD D XC C XL L IX X IV V I)
+# 	values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+# 	romans_num = letters.zip values
+# 	number = stuff.to_s
+# 	stuff = values
+# 	p number
+# 	p stuff
+# 	romans_num.times do |s|
+# 		number ! v[1] * number.scan(/#{v[0]}/)
+# 		number = number.scan(/#{v[0]}/)
+# 	end
+# 	return numerals
+# end
+
+
+
 # def romans(whatever)
 #   letters = %w(CM M CD D XC C XL L IX X IV V I)
 #   values = [900, 1000, 400, 500, 90, 100, 40, 50, 9, 10, 4, 5, 1]
