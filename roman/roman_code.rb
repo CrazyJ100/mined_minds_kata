@@ -62,27 +62,18 @@ def arabic_converter(numerals)
     unless numerals_array[counter].class == Integer
       case element
       when "C"
-        if numerals_array[counter + 1] == "M"
-          numerals_array[counter] = "CM"
-          numerals_array[counter + 1] = 0
-        elsif numerals_array[counter + 1] == "D"
-          numerals_array[counter] = "CD"
-          numerals_array[counter + 1] = 0   
+        if numerals_array[counter + 1] == "M" || numerals_array[counter +  1] == "D"
+          numerals_array[counter] = numerals_array[counter] + numerals_array [counter + 1]
+          numerals_array[counter + 1] = 0  
         end
       when "X"
-        if numerals_array[counter + 1] == "C"
-          numerals_array[counter] = "XC"
-          numerals_array[counter + 1] = 0
-        elsif numerals_array[counter + 1] == "L"
-          numerals_array[counter] = "XL"
-          numerals_array[counter + 1] = 0   
+        if numerals_array[counter + 1] == "C" || numerals_array[counter + 1] == "L"
+          numerals_array[counter] = numerals_array[counter] + numerals_array[counter + 1]
+          numerals_array[counter + 1] = 0 
         end 
       when "I"
-        if numerals_array[counter + 1] == "X"
-          numerals_array[counter] = "IX"
-          numerals_array[counter + 1] = 0
-        elsif numerals_array[counter + 1] == "V"
-          numerals_array[counter] = "IV"
+        if numerals_array[counter + 1] == "X" || numerals_array[counter + 1] == "V"
+          numerals_array[counter] = numerals_array[counter] + numerals_array[counter + 1]
           numerals_array[counter + 1] = 0   
         end 
       end
